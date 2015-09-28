@@ -1,0 +1,36 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="frendo.semanticknowledgedb.ui.DetailActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/linearLayout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/textViewComment"
+            android:padding="20dp"
+            android:text="This will be a comment text about a technique or a kata or something" />
+
+        <ExpandableListView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/expandableListView" />
+
+        <FrameLayout
+            android:id="@+id/youtube_fragment"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="15sp"
+            android:paddingBottom="15sp"
+            android:background="#fff" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>
