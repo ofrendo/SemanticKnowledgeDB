@@ -26,12 +26,12 @@ public class QueryHandler {
 
     private static HashMap<String, String> queryResults = new HashMap<>();
 
-    private String address = (Env.dev == false)
-            ? "https://semanticknowledgedbbackend.herokuapp.com/"
-            : "http://192.168.178.76:5000";
+    private String address;
 
     public QueryHandler() {
-
+        address = (Env.dev == false)
+                ? "https://semanticknowledgedbbackend.herokuapp.com/"
+                : "http://192.168.178.76:5000";
     }
 
     public String performPostCall(String postBody) {

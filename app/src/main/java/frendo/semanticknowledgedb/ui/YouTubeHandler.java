@@ -32,7 +32,7 @@ public class YouTubeHandler extends YouTubePlayerSupportFragment {
             b.putString("videoID", videoID);
             instance.setArguments(b);*/
 
-            instance.init();
+            //instance.init();
         }
 
         return instance;
@@ -43,7 +43,7 @@ public class YouTubeHandler extends YouTubePlayerSupportFragment {
         youTubePlayer.cueVideo(videoID);
     }
 
-    private void init() {
+    public void init() {
 
         initialize(API_KEY, new YouTubePlayer.OnInitializedListener() {
 

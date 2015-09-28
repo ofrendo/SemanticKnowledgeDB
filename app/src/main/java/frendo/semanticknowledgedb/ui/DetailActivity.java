@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ExpandableListView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -40,6 +41,7 @@ public class DetailActivity extends AppCompatActivity {
         itemLabel = intent.getStringExtra(OverviewActivity.INTENT_MESSAGE_CONTAINER_LABEL);
 
         YouTubeHandler youTubeHandler = YouTubeHandler.getInstance();
+        youTubeHandler.init();
         getSupportFragmentManager().beginTransaction().replace(R.id.youtube_fragment, youTubeHandler).commit();
 
         SparqlHandler sparqlHandler = new SparqlHandler();
@@ -65,7 +67,7 @@ public class DetailActivity extends AppCompatActivity {
                 setCommentText(jsonObject.getString("comment"));
             }
 
-            ExpandableListView expandableListView = (ExpandableListView) findViewById(R.id.expandableListView);
+            final ExpandableListView expandableListView = (ExpandableListView) findViewById(R.id.expandableListView);
 
             String images[] = {};
             String videos[] = {};
@@ -86,13 +88,13 @@ public class DetailActivity extends AppCompatActivity {
                     if (groupPosition == 1) {
                         String videoID = finalVideos[childPosition].split("=")[1];
                         setYouTubeVideoID(videoID);
+                        expandableListView.collapseGroup(0);
                     }
                     return true;
                 }
             });
             expandableListView.expandGroup(0);
             expandableListView.expandGroup(1);
-
         }
         catch (Exception e) {
             e.printStackTrace();
@@ -137,4 +139,5 @@ public class DetailActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 }

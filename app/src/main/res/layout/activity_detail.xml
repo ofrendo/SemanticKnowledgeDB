@@ -20,16 +20,15 @@
         <ExpandableListView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/expandableListView" />
+            android:id="@+id/expandableListView"
+            tools:listitem="@android:layout/simple_list_item_1" />
 
         <FrameLayout
             android:id="@+id/youtube_fragment"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="15sp"
-            android:paddingBottom="15sp"
-            android:background="#fff" />
-
+            android:layout_height="wrap_content" />
+        <!-- android:paddingTop="15sp"
+            android:paddingBottom="15sp"-->
     </LinearLayout>
 
 
